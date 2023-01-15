@@ -1,0 +1,141 @@
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using Sstorage.BLL;
+using Sstorage.DAL;
+
+namespace Sstorage.admin
+{
+    public partial class addUser : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            brAdlUsers.Text = "<br />";
+        }
+
+        protected void rbAdd_CheckedChanged(object sender, EventArgs e)
+        {
+            ddlUsers.Visible = false;
+            TxtUserName.Text = "";
+            TxtPassword.Text = "";
+            cbAddingUsers.Checked = false;
+            cbAddingStorages.Checked = false;
+        }
+
+        protected void rbEdit_CheckedChanged(object sender, EventArgs e)
+        {
+            brAdlUsers.Text = "";
+            ddlUsers.Visible = true;            
+            FilData();
+        }
+
+        protected void FilData()
+        {
+            SqlObject Rsql = new SqlObject();
+            DataTable Dt = new DataTable();
+            Dt = Rsql.ExecuteKeyValue("UserName", "UserId", "T_users");
+            ddlUsers.DataSource = Dt;
+            ddlUsers.DataTextField = "TextField";
+            ddlUsers.DataValueField = "ValueField";
+            ddlUsers.DataBind();
+            Rsql.Close();
+        }
+        protected void ddlUsers_TextChanged(object sender, EventArgs e)
+        {
+            brAdlUsers.Text = "";
+            User user = new User();
+            user = user.getUser(ddlUsers.SelectedIndex + 1);
+            TxtUserName.Text = user.Name;
+            TxtPassword.Text = user.Password;
+            if (user.Rid == 1)
+            {
+                cbAddingUsers.Checked = true;
+                cbAddingStorages.Checked = true;
+                cbCreatingOrders.Checked = true;
+                cbCollectingOrders.Checked = true;
+                cbAddingCategories.Checked = true;
+                cbAddingProducts.Checked = true;
+                cbAddingStoragesLocators.Checked = true;
+                cbInventoryUpdate.Checked = true;
+                cbAddingSuppliers.Checked = true;
+                cbExecutionInventoryMovements.Checked = true;
+                cbAbsorptionProducts.Checked = true;
+                cbOpeningSurfaces.Checked = true;
+                cbSurfacesLocatorUpdate.Checked = true;
+            }
+            else if (user.Rid == 2)
+            {
+                cbAddingUsers.Checked = false;
+                cbAddingStorages.Checked = true;
+                cbCreatingOrders.Checked = true;
+                cbCollectingOrders.Checked = true;
+                cbAddingCategories.Checked = true;
+                cbAddingProducts.Checked = true;
+                cbAddingStoragesLocators.Checked = true;
+                cbInventoryUpdate.Checked = true;
+                cbAddingSuppliers.Checked = true;
+                cbExecutionInventoryMovements.Checked = true;
+                cbAbsorptionProducts.Checked = true;
+                cbOpeningSurfaces.Checked = true;
+                cbSurfacesLocatorUpdate.Checked = true;
+            }
+            else if (user.Rid == 3)
+            {
+                cbAddingUsers.Checked = false;
+                cbAddingStorages.Checked = false;
+                cbCreatingOrders.Checked = true;
+                cbCollectingOrders.Checked = true;
+                cbAddingCategories.Checked = true;
+                cbAddingProducts.Checked = true;
+                cbAddingStoragesLocators.Checked = true;
+                cbInventoryUpdate.Checked = true;
+                cbAddingSuppliers.Checked = true;
+                cbExecutionInventoryMovements.Checked = true;
+                cbAbsorptionProducts.Checked = true;
+                cbOpeningSurfaces.Checked = true;
+                cbSurfacesLocatorUpdate.Checked = true;
+            }
+            else if (user.Rid == 4)
+            {
+                cbAddingUsers.Checked = false;
+                cbAddingStorages.Checked = false;
+                cbCreatingOrders.Checked = false;
+                cbCollectingOrders.Checked = false;
+                cbAddingCategories.Checked = false;
+                cbAddingProducts.Checked = false;
+                cbAddingStoragesLocators.Checked = true;
+                cbInventoryUpdate.Checked = false;
+                cbAddingSuppliers.Checked = false;
+                cbExecutionInventoryMovements.Checked = true;
+                cbAbsorptionProducts.Checked = true;
+                cbOpeningSurfaces.Checked = true;
+                cbSurfacesLocatorUpdate.Checked = true;
+            }
+            else if (user.Rid == 5)
+            {
+                cbAddingUsers.Checked = false;
+                cbAddingStorages.Checked = false;
+                cbCreatingOrders.Checked = false;
+                cbCollectingOrders.Checked = true;
+                cbAddingCategories.Checked = false;
+                cbAddingProducts.Checked = false;
+                cbAddingStoragesLocators.Checked = false;
+                cbInventoryUpdate.Checked = false;
+                cbAddingSuppliers.Checked = false;
+                cbExecutionInventoryMovements.Checked = false;
+                cbAbsorptionProducts.Checked = false;
+                cbOpeningSurfaces.Checked = false;
+                cbSurfacesLocatorUpdate.Checked = false;
+            }
+        }
+
+        protected void BtnOk_Click(object sender, EventArgs e)
+        {
+            brAdlUsers.Text = "";
+        }
+    }
+}

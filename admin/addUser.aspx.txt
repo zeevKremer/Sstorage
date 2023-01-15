@@ -1,0 +1,112 @@
+<%@ Page Title="מנהל - הוספת משתמש | Sstorage" Language="C#" MasterPageFile="~/admin/adminMaster.Master" AutoEventWireup="true" CodeBehind="addUser.aspx.cs" Inherits="Sstorage.admin.addUser" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div style="direction:rtl;">
+        <h1 style="text-align:center;">הוספת משתמשים</h1>
+        <br /><br />
+        <center>   
+        <asp:RadioButton ID="rbAdd" GroupName="1" checked="true" AutoPostBack="true" OnCheckedChanged="rbAdd_CheckedChanged" Text="הוספה" runat="server" />
+           <asp:RadioButton ID="rbEdit" GroupName="1" Text="עריכה" AutoPostBack="true" OnCheckedChanged="rbEdit_CheckedChanged" runat="server" />
+            <table style="width:1005px;" >
+                <tr>
+                    <td colspan="5">
+                         
+                        <br />  
+                        <asp:Literal ID="brAdlUsers" runat="server"  />
+                        <center>
+                        <asp:DropDownList ID="ddlUsers" AutoPostBack="true" OnTextChanged="ddlUsers_TextChanged" runat="server" Visible="false" />
+                        </center>
+                            <br /><br />                               
+                        </td>                    
+                </tr>                                                        
+            <tr>
+                <td style="width:20%;"></td>
+                <td style="width:20%;">
+                    UserName<asp:TextBox ID="TxtUserName" runat="server" />
+                </td>
+                <td style="width:20%;"></td>
+                <td style="width:20%;">
+                    Password<asp:TextBox ID="TxtPassword" runat="server" />
+                </td>
+                <td style="width:20%;"></td>
+            </tr>
+            <tr>
+                <td style="width:16%;">
+                    <br /><br />
+                    <asp:CheckBox ID="cbAddingUsers"  runat="server" Text="הוספת משתמשים"/>
+                </td>
+                <td style="width:16%;">
+                    <br /><br />
+                    <asp:CheckBox ID="cbAddingStorages"  runat="server" Text="הוספת מחסנים/לקוחות"/>
+                </td>
+                <td style="width:16%;">
+                    <br /><br />
+                    <asp:CheckBox ID="cbCreatingOrders"  runat="server" Text="יצירת הזמנות"/>
+                </td>
+                <td style="width:16%;">
+                    <br /><br />
+                    <asp:CheckBox ID="cbCollectingOrders"  runat="server" Text="ליקוט הזמנות"/>
+                </td>
+                <td style="width:36%;">
+                    <br /><br />
+                    <asp:CheckBox ID="cbAddingSuppliers"  runat="server" Text="הוספת ספקים"/>
+                    </td>
+            </tr>
+            <tr>
+                <td style="width:16%;">
+                    <br /><br />
+                    <asp:CheckBox ID="cbAddingCategories"  runat="server" Text="הוספת קטגוריות"/>
+                </td>
+                <td style="width:16%;">
+                       <br /><br />
+                    <asp:CheckBox ID="cbAddingProducts"  runat="server" Text="הוספת מוצרים"/>
+                </td>
+                <td style="width:16%;">
+                       <br /><br />
+                    <asp:CheckBox ID="cbAddingStoragesLocators"  runat="server" Text="הוספת איתורי מחסנים"/>
+                </td>
+                <td style="width:16%;">
+                       <br /><br />
+                    <asp:CheckBox ID="cbInventoryUpdate"  runat="server" Text="עידכון מלאי"/>
+                </td>
+                <td style="width:36%;">
+                       <br /><br />
+                    <asp:CheckBox ID="cbOpeningSurfaces"  runat="server" Text="פתיחת משטחים"/>
+                    </td>
+            </tr>
+            <tr>
+                <td style="width:16%;">
+                       <br /><br />
+                    
+                    <asp:CheckBox ID="cbSurfacesLocatorUpdate"  runat="server" Text="עידכון איתורי משטחים"/>
+                </td>
+                <td style="width:16%;">
+                       <br /><br />
+                     <asp:CheckBox ID="cbExecutionInventoryMovements"  runat="server" Text="ביצוע תנועות מלאי"/>
+                </td>
+                <td style="width:16%;">
+                       <br /><br />
+                    <asp:CheckBox ID="cbAbsorptionProducts"  runat="server" Text="קליטת מוצרים"/>
+                </td>
+                <td style="width:16%;">
+                       <br /><br />
+                    
+                </td>
+                <td style="width:36%;">
+                       <br /><br />
+                    
+                </td>
+            </tr>            
+            <tr>
+                <td colspan="5" >
+                    <br /><br />
+                    <center>
+                   <asp:Button ID="BtnOk" OnClick="BtnOk_Click" runat="server" Text="אישור" />
+                        </center>
+                </td>
+            </tr>
+        </table>                                              
+               <br /><br />                                                                                                                                                           
+        </div>
+</asp:Content>

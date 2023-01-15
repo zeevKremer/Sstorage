@@ -1,0 +1,112 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="adminMaster.master.cs" Inherits="Sstorage.admin.adminMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+         
+    <link href="css/rtl/bootstrap.min.css" rel="stylesheet" />       
+    <link href="css/rtl/bootstrap.rtl.css" rel="stylesheet" /> 
+    <link href="css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet" />    
+    <link href="css/plugins/timeline.css" rel="stylesheet" />   
+    <link href="css/rtl/sb-admin-2.css" rel="stylesheet" />    
+    <link href="css/plugins/morris.css" rel="stylesheet" />    
+    <link href="css/font-awesome/font-awesome.min.css" rel="stylesheet" type="text/css" />   
+    <link rel="stylesheet" type="text/css" href="css/icons.css">
+    <script src="js/head1.js""></script>    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="wrapper">
+            <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.aspx">Sstorage</a>
+            </div>        
+            <ul class="nav navbar-top-links navbar-right">
+                
+                <li>
+                    <ul>
+                        <li >                                   
+                                <asp:ContentPlaceHolder ID="ContentPlaceHolder0" runat="server">            
+                                            
+                                </asp:ContentPlaceHolder>                                                           
+                        </li>
+                    </ul>                    
+                </li>
+            </ul>            
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">                        
+                        <li>
+                            <a href="users.aspx"> משתמשים</a>
+                        </li>
+                        <li>
+                            <a href="storagrs.aspx"> סניפים</a>
+                        </li>
+                        <li>
+                            <a href="categorys.aspx"> קטגוריות</a>
+                        </li>
+                        <li>
+                            <a href="suppliers.aspx"> ספקים</a>
+                        </li>                        
+                        <li>
+                            <a href="products.aspx"> מוצרים</a>
+                        </li>
+                        <li>
+                            <a href="inventorys.aspx"> מלאים</a>
+                        </li>
+                        <li>
+                            <a href="#"> משטחים<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="OpeningSurfaces.aspx">  פתיחת משטח חדש</a>
+                                </li>
+                                <li>
+                                    <a href="SurfacesLocatorUpdate.aspx">  עידכון איתור משטח</a>
+                                </li>
+                                <li>
+                                    <a href="SurfacesMap.aspx">  מפת משטחים</a>
+                                </li>                                
+                            </ul>                           
+                        </li>                        
+                        <li>
+                            <a href="#"> תעודות<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="absorptionProducts.aspx">  קליטה מספקים</a>
+                                </li>
+                                <li>
+                                    <a href="transferCertificate.aspx">  העברות בין סניפים</a>
+                                </li>
+                                <li>
+                                    <a href="orders.aspx">  הזמנות לסניפים</a>
+                                </li>                                
+                            </ul>                           
+                        </li>                                                                                                                                                                                                                                               
+                    </ul>
+                </div>               
+            </div>          
+        </nav>
+            <div id="page-wrapper">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            
+            </asp:ContentPlaceHolder>
+            </div>
+       </div>
+    <script src="js/jquery-1.11.0.js"></script>   
+    <script src="js/bootstrap.min.js"></script>    
+    <script src="js/metisMenu/metisMenu.min.js"></script>  
+    <script src="js/raphael/raphael.min.js"></script>
+    <script src="js/morris/morris.min.js"></script>   
+    <script src="js/sb-admin-2.js"></script>
+    </form>
+</body>
+</html>

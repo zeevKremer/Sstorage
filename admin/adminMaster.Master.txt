@@ -1,0 +1,77 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="adminMaster.master.cs" Inherits="Sstorage.admin.adminMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>מנהל | Sstorage</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" type="text/css" href="css/masterStyle.css" />
+    <script type="text/javascript" src="js/masterJs.js"></script>
+</head>
+<body>
+    <form id="form1" runat="server" >
+        <div>
+             
+            <table style="width:1500px;" >
+                <tr>
+                    <td style="width:15%;">
+                        <center><img src="../images/logo.jpg" /></center>
+                    </td>
+                    <td style="width:70%;">
+                       <center><h1 >Sstorage ניהול מלאי ממוחשב</h1></center>
+                    </td>
+                    <td style="width:15%;" >
+                        <%--<center><img src="../images/logo.jpg" /></center>--%>
+                    </td>
+                </tr>
+                <tr><td><br /></td></tr>
+                <tr>       
+                    
+                    <td colspan="5" style="background-color:#0094ff;width:100%;height:15px;">
+                        
+                    </td>
+                </tr>
+                </table>
+            <table style="width:1305px;" >
+                <tr >                    
+                    <td style="width:205px;position: absolute;border:solid 3px;border-color:#0026ff;">                        
+                        <asp:ScriptManager ID="Scrman" runat="server" />                        
+                        <asp:UpdatePanel ID="Updpmain" runat="server">
+                        <ContentTemplate>
+                            
+            <div id="menu">
+            <ul class="first">
+                <li class="submenu"><a href="#" >משתמשים</a>                    
+                    <ul class="second">
+                        <li ><a href="addUser.aspx" >עריכה/הוספה</a></li>
+                        <li ><a href="searchUser.aspx" >חיפוש משתמש</a></li>                         
+                    </ul>
+                </li>
+                <li><a href="#" >קטגוריות</a></li>
+                <li><a href="#" >קטגוריות</a></li>
+                <li><a href="#" >קטגוריות</a></li>
+                <li class="submenu"><a href="#" >קטגוריות</a>
+                    <ul class="second">
+                        <li ><a href="editAndAddUser.aspx" >עריכת/הוספת משתמש</a></li>
+                        <li ><a href="#" >חיפוש משתמשים</a></li> 
+                        <li ><a href="#" >חיפוש משתמשים</a></li> 
+                    </ul>
+                </li>
+            </ul>
+        </div>
+                             </ContentTemplate>
+            </asp:UpdatePanel>
+                    </td>                                                                          
+                    <td style="width:1105px">                        
+                            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            
+                            </asp:ContentPlaceHolder>
+                        </td>
+                    </tr>
+                </table>                        
+        </div>
+    </form>
+</body>
+</html>
