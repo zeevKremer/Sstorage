@@ -1,0 +1,125 @@
+﻿body{
+    direction:rtl;
+}
+div#menu {
+    float: right;
+    width: 150px;
+    top: 0;
+    
+}
+
+div#menu ul {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+}
+
+    div#menu li {
+        position: relative;
+    }
+
+div#menu ul ul {
+    position: absolute;
+    top: 0;
+}
+
+div#menu ul ul {
+    position: absolute;
+    top: 0;
+    right: 200px;
+}
+
+div#menu ul {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    list-style: none;
+}
+
+div#menu li {
+    position: relative;
+    margin: 0;
+}
+
+body {
+    behavior: url(&quot;csshover.htc&quot;);
+}
+
+div#menu ul {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    list-style: none;
+    background: #DAE8F8;
+    border: 1px solid;
+}
+
+div#menu li a {
+    display: block;
+    font-size: 27px;
+    font-family: MingLiU_HKSCS-ExtB;
+}
+
+div#menu li {
+    position: relative;
+    margin: 0;
+    border-bottom: 1px solid silver;
+}
+
+    div#menu li a {
+        display: block;
+        text-decoration: none;
+        padding: 0.15em 0.5em 0.15em 0;
+    }
+
+    div#menu li a {
+        display: block;
+        text-decoration: none;
+        padding: 0.15em 0.5em 0.15em 0;
+        width: 192px;
+    }
+
+div#menu > ul a {
+    width: auto;
+}
+
+div#menu li:hover {
+    background: #fcc;
+}
+
+* html div#menu li {
+    float: right;
+}
+
+    div#menu li.submenu {
+        background: url("../images/direction.jpg") no-repeat center left;
+    }
+
+div#menu li {
+    position: relative;
+    margin: 0;
+    border-bottom: 1px solid silver;
+    display: block;
+}
+
+div#menu ul ul {
+    position: absolute;
+    top: 0;
+    right: 200px;
+    display: none;
+}
+
+div#menu ul.first li.submenu:hover ul.second {
+    display: block;
+}
+
+div#menu ul ul {
+    position: absolute;
+    top: 0;
+    right: 200px;
+    display: none;
+}
+
+
+
+
